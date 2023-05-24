@@ -1,0 +1,38 @@
+2/2a)
+PREFIX : <http://www.job.com#>
+
+SELECT *
+WHERE {
+  :John :formeA [ :intitule ?i ].
+}
+
+2b)
+PREFIX : <http://www.job.com#>
+
+SELECT *
+WHERE {
+  ?p :formeA [ :lieu "Mulhouse" ].
+}
+
+2c)
+PREFIX : <http://www.job.com#>
+
+SELECT *
+WHERE {
+  [:intitule ?i] :lieu "Marseille".
+}
+
+3)
+INSERT DATA {
+  :Technicien rdf:type owl:Class . 
+}
+INSERT DATA {
+  :Ingenieur rdf:type owl:Class . 
+}
+
+4)
+INSERT {
+  ?i rdf:Type :Ingenieur .
+  ?t rdf:Type :Technicien .
+} WHERE { ?t :formeA [ :intitule :DUT_GEII ] .
+ ?i :formeA [ :intitule :ENSISA ] . }
