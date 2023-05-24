@@ -1,0 +1,52 @@
+@prefix :      <http://www.job.com#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/schema#> .
+
+:John   a         :Personne , owl:NamedIndividual ;
+        rdf:Type  :Technicien , :Ingenieur ;
+        :formeA   [ :debut     "2017" ;
+                    :fin       "2019" ;
+                    :intitule  :DUT_GEII ;
+                    :lieu      "Marseille"
+                  ] ;
+        :formeA   [ :debut     "2020" ;
+                    :fin       "2021" ;
+                    :intitule  :ENSISA ;
+                    :lieu      "Mulhouse"
+                  ] .
+
+:Personne  a    owl:Class .
+
+:intitule  a         owl:ObjectProperty ;
+        rdfs:domain  :Formation ;
+        rdfs:range   :Ecole .
+
+:lieu   a            owl:DataTypeProperty ;
+        rdfs:domain  :Formation ;
+        rdfs:range   xsd:string .
+
+:debut  a            owl:DataTypeProperty ;
+        rdfs:domain  :Formation ;
+        rdfs:range   xsd:int .
+
+:fin    a            owl:DataTypeProperty ;
+        rdfs:domain  :Formation ;
+        rdfs:range   xsd:int .
+
+:formeA  a           owl:ObjectProperty ;
+        rdfs:domain  :Personne ;
+        rdfs:range   :Formation .
+
+:ENSISA  a      owl:NamedIndividual , :Ecole .
+
+:Formation  a   owl:Class .
+
+:Ecole  a       owl:Class .
+
+:DUT_GEII  a    owl:NamedIndividual , :Ecole .
+
+:Technicien  a  owl:Class .
+
+:Ingenieur  a   owl:Class .
