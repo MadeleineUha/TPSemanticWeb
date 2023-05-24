@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:ns0="http://bib.org#"
+         xmlns:ns1="http://w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:ns2="http://www.w3.org/2000/01/schema#">
+
+  <rdf:Description rdf:about="http://bib.org#john">
+    <ns0:write>
+      <rdf:Description rdf:about="http://bib.org#a1">
+        <ns0:journal>
+          <rdf:Description rdf:about="http://bib.org#jbd">
+            <ns1:type rdf:resource="http://bib.org#Journal"/>
+            <ns1:type rdf:resource="http://w3.org/2002/07/owl#NamedIndividual"/>
+            <ns0:editor>
+              <rdf:Description rdf:about="http://bib.org#springer">
+                <ns1:type rdf:resource="http://bib.org#Editor"/>
+                <ns1:type rdf:resource="http://w3.org/2002/07/owl#NamedIndividual"/>
+              </rdf:Description>
+            </ns0:editor>
+
+          </rdf:Description>
+        </ns0:journal>
+
+        <ns0:title>Categories for BigData</ns0:title>
+        <ns0:year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2019</ns0:year>
+        <ns1:type rdf:resource="http://bib.org#Article"/>
+        <ns1:type rdf:resource="http://w3.org/2002/07/owl#NamedIndividual"/>
+      </rdf:Description>
+    </ns0:write>
+
+    <ns1:type rdf:resource="http://bib.org#Person"/>
+    <ns1:type rdf:resource="http://w3.org/2002/07/owl#NamedIndividual"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://bib.org#title">
+    <ns2:domain rdf:resource="http://bib.org#Article"/>
+    <ns2:range>
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchemastring">
+        <ns1:type rdf:resource="http://w3.org/2002/07/owl#Class"/>
+      </rdf:Description>
+    </ns2:range>
+
+    <ns1:type rdf:resource="http://w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://bib.org#year">
+    <ns2:domain rdf:resource="http://bib.org#Article"/>
+    <ns2:range>
+      <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchemaint">
+        <ns1:type rdf:resource="http://w3.org/2002/07/owl#Class"/>
+      </rdf:Description>
+    </ns2:range>
+
+    <ns1:type rdf:resource="http://w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://bib.org#writes">
+    <ns2:domain rdf:resource="http://bib.org#Person"/>
+    <ns2:range rdf:resource="http://bib.org#Article"/>
+    <ns1:type rdf:resource="http://w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://bib.org#journal">
+    <ns2:domain rdf:resource="http://bib.org#Article"/>
+    <ns2:range rdf:resource="http://bib.org#Journal"/>
+    <ns1:type rdf:resource="http://w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://bib.org#editor">
+    <ns2:domain rdf:resource="http://bib.org#Journal"/>
+    <ns2:range rdf:resource="http://bib.org#Editor"/>
+    <ns1:type rdf:resource="http://w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://bib.org#Editor">
+    <ns1:type rdf:resource="http://w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://bib.org#Journal">
+    <ns1:type rdf:resource="http://w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://bib.org#Person">
+    <ns1:type rdf:resource="http://w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://bib.org#Article">
+    <ns1:type rdf:resource="http://w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+
+</rdf:RDF>

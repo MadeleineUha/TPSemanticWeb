@@ -1,0 +1,21 @@
+@prefix : <http://bib.org#>.
+@prefix owl: <http://w3.org/2002/07/owl#>.
+@prefix rdf: <http://w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema>.
+@prefix rdfs: <http://www.w3.org/2000/01/schema#>.
+
+:john :write :a1 ; rdf:type :Person, owl:NamedIndividual.
+:a1 :journal :jbd ; :title "Categories for BigData" ; :year 2019 ; rdf:type :Article, owl:NamedIndividual.
+:jbd rdf:type :Journal, owl:NamedIndividual ; :editor :springer.
+:springer rdf:type :Editor, owl:NamedIndividual.
+:title rdfs:domain :Article ; rdfs:range xsd:string ; rdf:type owl:DatatypeProperty.
+:year rdfs:domain :Article ; rdfs:range xsd:int ; rdf:type owl:DatatypeProperty.
+:writes rdfs:domain :Person ; rdfs:range :Article ; rdf:type owl:ObjectProperty.
+:journal rdfs:domain :Article ; rdfs:range :Journal ; rdf:type owl:ObjectProperty.
+:editor rdfs:domain :Journal ; rdfs:range :Editor ; rdf:type owl:ObjectProperty.
+:Editor rdf:type owl:Class.
+:Journal rdf:type owl:Class.
+:Person rdf:type owl:Class.
+:Article rdf:type owl:Class.
+xsd:string rdf:type owl:Class.
+xsd:int rdf:type owl:Class.
